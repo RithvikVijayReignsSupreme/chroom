@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chroom Download</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f9fafe; color: #222; scroll-behavior: smooth; }
+    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+    header {
+      background: linear-gradient(to right, #007BFF, #00C9FF);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    header img.logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 20px; }
+    header p { font-size: 1.2rem; margin-bottom: 30px; }
+    .download-btn {
+      background: white; color: #007BFF;
+      padding: 15px 30px; border-radius: 8px;
+      text-decoration: none; font-weight: bold;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .feature {
+      background: white; border-radius: 10px; padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .feature:hover { transform: translateY(-5px); }
+    .feature img {
+      width: 60px; animation: float 2s ease-in-out infinite;
+      margin-bottom: 15px;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .gallery {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 20px;
+    }
+    .gallery img {
+      width: 100%; max-width: 300px;
+      border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .pricing-tier {
+      background: white;
+      border: 2px dashed #ccc;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .pricing-tier h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .pricing-tier ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+    }
+
+    /* Sketchy Hover for Optimize Feature */
+    #optimize-feature:hover h4 {
+      animation: sketchy-glitch 0.4s infinite;
+      color: #e00000;
+      text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.6);
+      cursor: not-allowed;
+    }
+
+    #optimize-feature:hover {
+      animation: sketchy-shake 0.3s infinite;
+      filter: contrast(1.4) brightness(1.1);
+    }
+
+    @keyframes sketchy-glitch {
+      0% { color: #e00000; transform: translateX(0); }
+      20% { color: #ff33cc; }
+      40% { color: #ffffff; }
+      60% { color: #e00000; transform: translateX(-2px); }
+      80% { color: #9900ff; transform: translateX(2px); }
+      100% { color: #e00000; transform: translateX(0); }
+    }
+
+    @keyframes sketchy-shake {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(2px, -2px); }
+      50% { transform: translate(-2px, 2px); }
+      75% { transform: translate(2px, 2px); }
+    }
+
+    /* Pop-up glitch effect */
+    .glitch-popup {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: #39ff14;
+      font-family: monospace;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0,255,0,0.8);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    #optimize-feature:hover .glitch-popup {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/planey-logo.png" alt="PlaneyBrowser Logo" class="logo">
+  <h1>Chroom</h1>
+  <p>The browser that breaks the sky—and your expectations. and is not a chrome ripoff</p>
+  <a href="#download" class="download-btn">Scroll to Download</a>
+</header>
+
+<section id="features">
+  <h2>🚀 Features that Fly Beyond</h2>
+  <div class="features">
+    <div class="feature">
+      <img src="images/speed-icon.png" alt="Speed">
+      <h4>Blazing Speed</h4>
+      <p>Instant page loads. Lightning memory use. Nothing holds it back.</p>
+    </div>
+    <div class="feature">
+      <img src="images/security-icon.png" alt="Security">
+      <h4>Built-in Protection</h4>
+      <p>No trackers. No junk. Just pure web.</p>
+    </div>
+    <div class="feature">
+      <img src="images/tabfight-icon.png" alt="Tab Fight">
+      <h4>Tab Fight Mode™</h4>
+      <p>Settle inter-tab conflict the only way that matters: battle mode.</p>
+    </div>
+    <div class="feature">
+      <img src="images/ui-icon.png" alt="UI">
+      <h4>Sleek UI</h4>
+      <p>Clean, focused interface designed to keep you soaring.</p>
+    </div>
+    <div class="feature" id="optimize-feature">
+      <img src="images/mystery-icon.png" alt="Optimize Performance">
+      <h4>Optimize Performance Mode™</h4>
+      <p>What does it do? That’s classified. Just know: when you enable it, things happen. Glorious things.</p>
+      <div class="glitch-popup">💥 Reality distortion field engaged...</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>📸 Peek Inside the Cockpit</h2>
+  <div class="gallery">
+    <img src="images/screenshot-home.png" alt="Home">
+    <img src="images/screenshot-fight.png" alt="Tab Fight">
+    <img src="images/screenshot-settings.png" alt="Settings">
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>💸 Pricing (Because You Deserve Options)</h2>
+
+  <div class="pricing-tier">
+    <h3>🎭 Normal Plan (Free… kinda)</h3>
+    <p>$0/month</p>
+    <ul>
+      <li>Basic browsing</li>
+      <li>Occasional motivational roasts</li>
+      <li>Random Tab Duels</li>
+      <li>Surprise features like "dark mode that sings"</li>
+      <li>Optimize Performance Mode™ (it *might* make you faster… or weirder)</li>
+      <li>One boss fight per month to keep premium mode 😈</li>
+    </ul>
+  </div>
+
+  <div class="pricing-tier">
+    <h3>⚡ Chroom — PRO PLAN</h3>
+    <p>$49.99/month or $499/year</p>
+    <ul>
+      <li>Tab Fight Mode™ Lite</li>
+      <li>Boss Key Mode (hide browser in Excel)</li>
+      <li>Savage ad blocker with insults</li>
+      <li>AI autocomplete with emotional support</li>
+      <li>Optimize Performance Mode™ — Enhanced. No one knows how it works. But it *does.*</li>
+      <li>Verified badge. Total flex.</li>
+    </ul>
+  </div>
+
+  <div class="pricing-tier">
+    <h3>🧨 Enterprise Plan</h3>
+    <p>$999/month or $10,999/year</p>
+    <ul>
+      <li>Unlimited seats</li>
+      <li>Tab Fight Mode™ for team conflicts</li>
+      <li>Firewall-piercing stealth VPN</li>
+      <li>Instant response support</li>
+      <li>Optimize Performance Mode™ Ultra — might wake up the Matrix</li>
+      <li>Digital sticker that mocks competitors</li>
+    </ul>
+  </div>
+</section>
+
+<section id="download">
+  <h2>📦 Ready to Board?</h2>
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="https://drive.google.com/uc?export=download&id=1-AUhOhrUzKO7XjoNB5mUGX4Iybg7DlDt" class="download-btn">Download Chroom</a>
+    <p style="margin-top: 30px;">Compatible with Windows 10+ • Mac version coming soon "Every thing is free the pricing is a joke..." 🚧</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Chroom — Designed by Rithvik & Spark ✈️
+</footer>
+
+</body>
+</html>
